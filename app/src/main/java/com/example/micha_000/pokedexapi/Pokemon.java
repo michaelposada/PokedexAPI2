@@ -1,5 +1,6 @@
 package com.example.micha_000.pokedexapi;
 
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -14,6 +15,10 @@ public class Pokemon {
     public String weight;
     @SerializedName("height")
     public String height;
+    @SerializedName("number")
+    public String number;
+    @SerializedName("sprites")
+    public Drawable image;
     /*@SerializedName("attack")
     public String attack;
     @SerializedName("defense")
