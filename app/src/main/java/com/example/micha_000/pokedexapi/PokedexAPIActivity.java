@@ -35,6 +35,14 @@ public class PokedexAPIActivity extends AppCompatActivity {
 
         newList.add("bulbasaur");
         newList.add("pikachu");
+        newList.add("charmander");
+        newList.add("squirtle");
+        newList.add("raichu");
+        newList.add("eevee");
+        newList.add("pichu");
+        newList.add("charizard");
+        newList.add("ditto");
+        newList.add("vulpix");
         PokemonAdapter pokes = new PokemonAdapter(newList);
         mRecyclerView.setAdapter(pokes);
 

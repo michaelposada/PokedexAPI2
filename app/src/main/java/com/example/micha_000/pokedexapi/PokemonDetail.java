@@ -72,7 +72,8 @@ public class PokemonDetail extends AppCompatActivity {
                 heightTextView.setText(pokemon.height);
 
                  Glide.with(context).load("http://pokeapi.co/media/sprites/pokemon/" + pokemon.number + ".png").into(Test);
-                 Drawable place = Test.getDrawable();
+                 //used glide to load the url with the pokemon number then placed the image into test.
+                 Drawable place = Test.getDrawable(); // used test to get the image view and then placed it in place
                 pic.setImageDrawable(place);
                 /*attackTextView.setText(pokemon.attack);
                 defenseTextView.setText(pokemon.defense);

@@ -15,7 +15,7 @@ public class Pokemon {
     public String weight;
     @SerializedName("height")
     public String height;
-    @SerializedName("number")
+    @SerializedName("id")
     public String number;
     @SerializedName("sprites")
     public Drawable image;
