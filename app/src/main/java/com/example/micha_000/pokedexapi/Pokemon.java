@@ -4,7 +4,10 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class Pokemon {
 
@@ -19,7 +22,9 @@ public class Pokemon {
     public String number;
     @SerializedName("sprites")
     public Drawable image;
-    /*@SerializedName("attack")
+    @SerializedName("stats")
+    private List<JsonObject> mStats;
+    @SerializedName("attack")
     public String attack;
     @SerializedName("defense")
     public String defense;
@@ -27,13 +32,108 @@ public class Pokemon {
     public String hp;
     @SerializedName("special-attack")
     public String spa;
-    @SerializedName("spcial-defense")
+    @SerializedName("special-defense")
     public String spd;
     @SerializedName("speed")
     public String speed;
 
-    @SerializedName("sprite")
-    public String image;*/
+    public String getAttack() {
+        for(int i=0; i< this.mStats.size(); i++)
+        {
+            JsonObject x = this.mStats.get(i);
+            if(x.get("stat") instanceof JsonObject)
+            {
+                if(String.valueOf(((JsonObject) x.get("stat")).get("name")).equals("\"attack\""))
+                {
+                    this.attack = String.valueOf(x.get("base_stat"));
+                }
+
+            }
+        }
+        return attack;
+    }
+
+    public String getDefense() {
+        for(int i=0; i< this.mStats.size(); i++)
+        {
+            JsonObject x = this.mStats.get(i);
+            if(x.get("stat") instanceof JsonObject)
+            {
+                if(String.valueOf(((JsonObject) x.get("stat")).get("name")).equals("\"defense\""))
+                {
+                    this.defense = String.valueOf(x.get("base_stat"));
+                }
+
+            }
+        }
+        return defense;
+    }
+    public String getSpecialAttack() {
+        for(int i=0; i< this.mStats.size(); i++)
+        {
+            JsonObject x = this.mStats.get(i);
+            if(x.get("stat") instanceof JsonObject)
+            {
+                if(String.valueOf(((JsonObject) x.get("stat")).get("name")).equals("\"special-attack\""))
+                {
+                    this.spa = String.valueOf(x.get("base_stat"));
+                }
+
+            }
+        }
+        return spa;
+    }
+    public String getHp() {
+        for(int i=0; i< this.mStats.size(); i++)
+        {
+            JsonObject x = this.mStats.get(i);
+            if(x.get("stat") instanceof JsonObject)
+            {
+                if(String.valueOf(((JsonObject) x.get("stat")).get("name")).equals("\"hp\""))
+                {
+                    this.hp = String.valueOf(x.get("base_stat"));
+                }
+
+            }
+        }
+        return hp;
+    }
+    public String getSpd() {
+        for(int i=0; i< this.mStats.size(); i++)
+        {
+            JsonObject x = this.mStats.get(i);
+            if(x.get("stat") instanceof JsonObject)
+            {
+                if(String.valueOf(((JsonObject) x.get("stat")).get("name")).equals("\"special-defense\""))
+                {
+                    this.spd = String.valueOf(x.get("base_stat"));
+                }
+
+            }
+        }
+        return spd;
+    }
+    public String getSpeed() {
+        for(int i=0; i< this.mStats.size(); i++)
+        {
+            JsonObject x = this.mStats.get(i);
+            if(x.get("stat") instanceof JsonObject)
+            {
+                if(String.valueOf(((JsonObject) x.get("stat")).get("name")).equals("\"speed\""))
+                {
+                    this.attack = String.valueOf(x.get("base_stat"));
+                }
+
+            }
+        }
+        return speed;
+    }
+
+
+
+
+
+
 
 
 //    public static final Parcelable.Creator<Pokemon> CREATOR = new Parcelable.Creator<Pokemon>()

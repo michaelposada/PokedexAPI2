@@ -70,17 +70,18 @@ public class PokemonDetail extends AppCompatActivity {
                 titleTextView.setText(pokemon.name);
                 weightTextView.setText(pokemon.weight);
                 heightTextView.setText(pokemon.height);
+                hpTextView.setText("Hp: "+ pokemon.getHp());
+                attackTextView.setText("Attack: "+ pokemon.getAttack());
+                defenseTextView.setText("Defense: "+ pokemon.getDefense());
+                spaTextView.setText("Special Attack: "+ pokemon.getSpecialAttack());
+                spdTextView.setText("Special Defense: "+ pokemon.getSpd());
+                speedTextView.setText("Speed: "+ pokemon.getSpeed());
 
-                 Glide.with(context).load("http://pokeapi.co/media/sprites/pokemon/" + pokemon.number + ".png").into(Test);
-                 //used glide to load the url with the pokemon number then placed the image into test.
-                 Drawable place = Test.getDrawable(); // used test to get the image view and then placed it in place
+                Glide.with(context).load("http://pokeapi.co/media/sprites/pokemon/" + pokemon.number + ".png").into(Test);
+                //used glide to load the url with the pokemon number then placed the image into test.
+                Drawable place = Test.getDrawable(); // used test to get the image view and then placed it in place
                 pic.setImageDrawable(place);
-                /*attackTextView.setText(pokemon.attack);
-                defenseTextView.setText(pokemon.defense);
-                hpTextView.setText(pokemon.hp);
-                spaTextView.setText(pokemon.spa);
-                spdTextView.setText(pokemon.spd);
-                speedTextView.setText(pokemon.speed);*/
+             
 
 
 
